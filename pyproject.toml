@@ -1,0 +1,12 @@
+[project]
+name = "coderag"
+version = "0.1.0"
+description = "Code-aware retrieval and grounded Q&A with an evaluation harness"
+requires-python = ">=3.10"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[tool.setuptools.packages.find]
+where = ["src"]

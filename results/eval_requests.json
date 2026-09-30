@@ -1,0 +1,570 @@
+{
+  "repo": "requests",
+  "subdir": "src/requests",
+  "commit": "b25c87d7cb8d6a18a37fa12442b5f883f9e41741",
+  "seed": 42,
+  "corpus": {
+    "files": 18,
+    "chunks": 296,
+    "terms": 1618,
+    "chunks_by_kind": {
+      "module": 19,
+      "function": 75,
+      "class": 44,
+      "method": 158
+    },
+    "index_build_s": {
+      "tokenize": 0.03,
+      "bm25": 0.0,
+      "dense": 0.08
+    }
+  },
+  "benchmark": {
+    "eligible_queries": 125,
+    "train_queries": 97,
+    "test_queries": 28,
+    "test_files": 2,
+    "share_with_name_overlap": 0.857
+  },
+  "modes": {
+    "bm25": {
+      "hit@1": {
+        "value": 0.3929,
+        "ci95": [
+          0.3704,
+          1.0
+        ]
+      },
+      "hit@5": {
+        "value": 0.7857,
+        "ci95": [
+          0.7778,
+          1.0
+        ]
+      },
+      "hit@10": {
+        "value": 0.8571,
+        "ci95": [
+          0.8519,
+          1.0
+        ]
+      },
+      "mrr@10": {
+        "value": 0.567,
+        "ci95": [
+          0.5509,
+          1.0
+        ]
+      },
+      "recall@50": {
+        "value": 0.9643,
+        "ci95": [
+          0.963,
+          1.0
+        ]
+      },
+      "latency_ms": {
+        "mean": 0.205,
+        "p50": 0.2,
+        "p95": 0.249,
+        "p99": 0.27
+      }
+    },
+    "dense": {
+      "hit@1": {
+        "value": 0.4286,
+        "ci95": [
+          0.4074,
+          1.0
+        ]
+      },
+      "hit@5": {
+        "value": 0.8214,
+        "ci95": [
+          0.8148,
+          1.0
+        ]
+      },
+      "hit@10": {
+        "value": 0.8929,
+        "ci95": [
+          0.8889,
+          1.0
+        ]
+      },
+      "mrr@10": {
+        "value": 0.6084,
+        "ci95": [
+          0.5939,
+          1.0
+        ]
+      },
+      "recall@50": {
+        "value": 0.9643,
+        "ci95": [
+          0.963,
+          1.0
+        ]
+      },
+      "latency_ms": {
+        "mean": 0.3,
+        "p50": 0.291,
+        "p95": 0.361,
+        "p99": 0.367
+      }
+    },
+    "hybrid": {
+      "hit@1": {
+        "value": 0.4643,
+        "ci95": [
+          0.4444,
+          1.0
+        ]
+      },
+      "hit@5": {
+        "value": 0.8214,
+        "ci95": [
+          0.8148,
+          1.0
+        ]
+      },
+      "hit@10": {
+        "value": 0.8929,
+        "ci95": [
+          0.8889,
+          1.0
+        ]
+      },
+      "mrr@10": {
+        "value": 0.6066,
+        "ci95": [
+          0.5921,
+          1.0
+        ]
+      },
+      "recall@50": {
+        "value": 0.9643,
+        "ci95": [
+          0.963,
+          1.0
+        ]
+      },
+      "latency_ms": {
+        "mean": 0.341,
+        "p50": 0.302,
+        "p95": 0.406,
+        "p99": 0.956
+      }
+    },
+    "rerank": {
+      "hit@1": {
+        "value": 0.4643,
+        "ci95": [
+          0.4444,
+          1.0
+        ]
+      },
+      "hit@5": {
+        "value": 0.8214,
+        "ci95": [
+          0.8148,
+          1.0
+        ]
+      },
+      "hit@10": {
+        "value": 0.8929,
+        "ci95": [
+          0.8889,
+          1.0
+        ]
+      },
+      "mrr@10": {
+        "value": 0.628,
+        "ci95": [
+          0.6142,
+          1.0
+        ]
+      },
+      "recall@50": {
+        "value": 0.9643,
+        "ci95": [
+          0.963,
+          1.0
+        ]
+      },
+      "latency_ms": {
+        "mean": 0.772,
+        "p50": 0.771,
+        "p95": 0.846,
+        "p99": 0.923
+      }
+    },
+    "rerank_transfer": {
+      "hit@1": {
+        "value": 0.4286,
+        "ci95": [
+          0.4074,
+          1.0
+        ]
+      },
+      "hit@5": {
+        "value": 0.7857,
+        "ci95": [
+          0.7778,
+          1.0
+        ]
+      },
+      "hit@10": {
+        "value": 0.8929,
+        "ci95": [
+          0.8889,
+          1.0
+        ]
+      },
+      "mrr@10": {
+        "value": 0.5959,
+        "ci95": [
+          0.5809,
+          1.0
+        ]
+      },
+      "recall@50": {
+        "value": 0.9643,
+        "ci95": [
+          0.963,
+          1.0
+        ]
+      },
+      "latency_ms": {
+        "mean": 0.816,
+        "p50": 0.772,
+        "p95": 0.923,
+        "p99": 1.513
+      }
+    }
+  },
+  "paired": {
+    "hybrid_minus_bm25": {
+      "diff": 0.0397,
+      "ci95": [
+        0.0,
+        0.0411
+      ],
+      "significant": false
+    },
+    "hybrid_minus_dense": {
+      "diff": -0.0018,
+      "ci95": [
+        -0.0019,
+        0.0
+      ],
+      "significant": false
+    },
+    "rerank_minus_hybrid": {
+      "diff": 0.0213,
+      "ci95": [
+        0.0,
+        0.0221
+      ],
+      "significant": false
+    },
+    "rerank_transfer_minus_hybrid": {
+      "diff": -0.0108,
+      "ci95": [
+        -0.0112,
+        0.0
+      ],
+      "significant": false
+    }
+  },
+  "difficulty": {
+    "query_shares_a_word_with_name": {
+      "n": 24,
+      "bm25": {
+        "mrr@10": 0.6267,
+        "hit@10": 0.9167
+      },
+      "dense": {
+        "mrr@10": 0.6751,
+        "hit@10": 0.9583
+      },
+      "hybrid": {
+        "mrr@10": 0.6765,
+        "hit@10": 0.9583
+      },
+      "rerank": {
+        "mrr@10": 0.7049,
+        "hit@10": 0.9583
+      }
+    },
+    "no_shared_word_with_name": {
+      "n": 4,
+      "bm25": {
+        "mrr@10": 0.2083,
+        "hit@10": 0.5
+      },
+      "dense": {
+        "mrr@10": 0.2083,
+        "hit@10": 0.5
+      },
+      "hybrid": {
+        "mrr@10": 0.1875,
+        "hit@10": 0.5
+      },
+      "rerank": {
+        "mrr@10": 0.1667,
+        "hit@10": 0.5
+      }
+    }
+  },
+  "chunking": {
+    "ast": {
+      "bm25": {
+        "hit@1": {
+          "value": 0.3929,
+          "ci95": [
+            0.3704,
+            1.0
+          ]
+        },
+        "hit@5": {
+          "value": 0.7857,
+          "ci95": [
+            0.7778,
+            1.0
+          ]
+        },
+        "hit@10": {
+          "value": 0.8571,
+          "ci95": [
+            0.8519,
+            1.0
+          ]
+        },
+        "mrr@10": {
+          "value": 0.567,
+          "ci95": [
+            0.5509,
+            1.0
+          ]
+        },
+        "recall@50": {
+          "value": 0.9643,
+          "ci95": [
+            0.963,
+            1.0
+          ]
+        },
+        "latency_ms": {
+          "mean": 0.205,
+          "p50": 0.2,
+          "p95": 0.249,
+          "p99": 0.27
+        }
+      },
+      "hybrid": {
+        "hit@1": {
+          "value": 0.4643,
+          "ci95": [
+            0.4444,
+            1.0
+          ]
+        },
+        "hit@5": {
+          "value": 0.8214,
+          "ci95": [
+            0.8148,
+            1.0
+          ]
+        },
+        "hit@10": {
+          "value": 0.8929,
+          "ci95": [
+            0.8889,
+            1.0
+          ]
+        },
+        "mrr@10": {
+          "value": 0.6066,
+          "ci95": [
+            0.5921,
+            1.0
+          ]
+        },
+        "recall@50": {
+          "value": 0.9643,
+          "ci95": [
+            0.963,
+            1.0
+          ]
+        },
+        "latency_ms": {
+          "mean": 0.341,
+          "p50": 0.302,
+          "p95": 0.406,
+          "p99": 0.956
+        }
+      }
+    },
+    "windows": {
+      "bm25": {
+        "hit@1": {
+          "value": 0.3929,
+          "ci95": [
+            0.3704,
+            1.0
+          ]
+        },
+        "hit@5": {
+          "value": 0.6786,
+          "ci95": [
+            0.6667,
+            1.0
+          ]
+        },
+        "hit@10": {
+          "value": 0.8214,
+          "ci95": [
+            0.8148,
+            1.0
+          ]
+        },
+        "mrr@10": {
+          "value": 0.5101,
+          "ci95": [
+            0.492,
+            1.0
+          ]
+        },
+        "recall@50": {
+          "value": 0.9643,
+          "ci95": [
+            0.963,
+            1.0
+          ]
+        },
+        "latency_ms": {
+          "mean": 0.202,
+          "p50": 0.201,
+          "p95": 0.233,
+          "p99": 0.246
+        }
+      },
+      "hybrid": {
+        "hit@1": {
+          "value": 0.4286,
+          "ci95": [
+            0.4074,
+            1.0
+          ]
+        },
+        "hit@5": {
+          "value": 0.75,
+          "ci95": [
+            0.7407,
+            1.0
+          ]
+        },
+        "hit@10": {
+          "value": 0.8214,
+          "ci95": [
+            0.8148,
+            1.0
+          ]
+        },
+        "mrr@10": {
+          "value": 0.5322,
+          "ci95": [
+            0.5149,
+            1.0
+          ]
+        },
+        "recall@50": {
+          "value": 0.9643,
+          "ci95": [
+            0.963,
+            1.0
+          ]
+        },
+        "latency_ms": {
+          "mean": 0.278,
+          "p50": 0.269,
+          "p95": 0.327,
+          "p99": 0.331
+        }
+      }
+    },
+    "n_chunks": {
+      "ast": 296,
+      "windows": 190
+    }
+  },
+  "reranker": {
+    "train": {
+      "queries_used": 95,
+      "queries_total": 97,
+      "rows": 4750,
+      "positives": 95
+    },
+    "weights": {
+      "is_class": -0.907,
+      "is_function": 0.595,
+      "bm25_rel": 0.563,
+      "dense_rel": 0.555,
+      "is_method": 0.522,
+      "name_overlap": 0.354,
+      "dense": 0.341,
+      "term_coverage": -0.295,
+      "bm25_rank_recip": 0.261,
+      "rrf_rel": 0.239,
+      "sig_overlap": 0.236,
+      "idf_coverage": -0.186,
+      "log_len": 0.077,
+      "path_overlap": 0.062,
+      "dense_rank_recip": -0.002
+    }
+  },
+  "examples": [
+    {
+      "query": "Produce an appropriate Cookie header string to be sent with request, or None.",
+      "target": "src/requests/cookies.py:140-148 get_cookie_header",
+      "rank": 1,
+      "top3": [
+        "src/requests/cookies.py:140-148 get_cookie_header",
+        "src/requests/sessions.py:390-449 Session.__init__",
+        "src/requests/models.py:610-628 PreparedRequest.prepare_cookies"
+      ]
+    },
+    {
+      "query": "Dict-like keys() that returns a list of names of cookies from the jar.",
+      "target": "src/requests/cookies.py:234-240 RequestsCookieJar.keys",
+      "rank": 1,
+      "top3": [
+        "src/requests/cookies.py:234-240 RequestsCookieJar.keys",
+        "src/requests/cookies.py:521-539 cookiejar_from_dict",
+        "src/requests/utils.py:308-332 from_key_val_list"
+      ]
+    },
+    {
+      "query": "Updates this jar with cookies from another CookieJar or dict-like",
+      "target": "src/requests/cookies.py:358-364 RequestsCookieJar.update",
+      "rank": 2,
+      "top3": [
+        "src/requests/cookies.py:542-561 merge_cookies",
+        "src/requests/cookies.py:358-364 RequestsCookieJar.update",
+        "src/requests/cookies.py:521-539 cookiejar_from_dict"
+      ]
+    },
+    {
+      "query": "Both __get_item__ and get call this function: it's never used elsewhere in Requests.",
+      "target": "src/requests/cookies.py:386-413 RequestsCookieJar._find_no_duplicates",
+      "rank": 0,
+      "top3": [
+        "src/requests/adapters.py:203-214 HTTPAdapter.__setstate__",
+        "src/requests/api.py:62-73 get",
+        "src/requests/sessions.py:107-125 SessionRedirectMixin.get_redirect_target"
+      ]
+    }
+  ],
+  "seconds": 0.5
+}

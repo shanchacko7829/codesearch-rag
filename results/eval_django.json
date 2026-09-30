@@ -1,0 +1,521 @@
+{
+  "repo": "django",
+  "subdir": "django",
+  "commit": "75c4403f07b8ad25893f7832dbe8fc6814b53b2d",
+  "seed": 42,
+  "corpus": {
+    "files": 591,
+    "chunks": 10135,
+    "terms": 16832,
+    "chunks_by_kind": {
+      "module": 301,
+      "function": 1111,
+      "class": 1751,
+      "method": 6878,
+      "method_part": 67,
+      "function_part": 27
+    },
+    "index_build_s": {
+      "tokenize": 1.04,
+      "bm25": 0.12,
+      "dense": 1.08
+    }
+  },
+  "benchmark": {
+    "eligible_queries": 2462,
+    "train_queries": 1500,
+    "test_queries": 646,
+    "test_files": 86,
+    "share_with_name_overlap": 0.772
+  },
+  "modes": {
+    "bm25": {
+      "hit@1": {
+        "value": 0.2941,
+        "ci95": [
+          0.2356,
+          0.3581
+        ]
+      },
+      "hit@5": {
+        "value": 0.5449,
+        "ci95": [
+          0.4722,
+          0.6124
+        ]
+      },
+      "hit@10": {
+        "value": 0.644,
+        "ci95": [
+          0.5734,
+          0.7119
+        ]
+      },
+      "mrr@10": {
+        "value": 0.4021,
+        "ci95": [
+          0.3416,
+          0.4681
+        ]
+      },
+      "recall@50": {
+        "value": 0.7926,
+        "ci95": [
+          0.7294,
+          0.8538
+        ]
+      },
+      "latency_ms": {
+        "mean": 0.302,
+        "p50": 0.271,
+        "p95": 0.405,
+        "p99": 0.527
+      }
+    },
+    "dense": {
+      "hit@1": {
+        "value": 0.1656,
+        "ci95": [
+          0.1329,
+          0.2078
+        ]
+      },
+      "hit@5": {
+        "value": 0.3545,
+        "ci95": [
+          0.3016,
+          0.4117
+        ]
+      },
+      "hit@10": {
+        "value": 0.4551,
+        "ci95": [
+          0.3961,
+          0.5167
+        ]
+      },
+      "mrr@10": {
+        "value": 0.2461,
+        "ci95": [
+          0.208,
+          0.2906
+        ]
+      },
+      "recall@50": {
+        "value": 0.6966,
+        "ci95": [
+          0.6322,
+          0.7608
+        ]
+      },
+      "latency_ms": {
+        "mean": 0.891,
+        "p50": 0.849,
+        "p95": 1.169,
+        "p99": 1.285
+      }
+    },
+    "hybrid": {
+      "hit@1": {
+        "value": 0.2461,
+        "ci95": [
+          0.2006,
+          0.3004
+        ]
+      },
+      "hit@5": {
+        "value": 0.469,
+        "ci95": [
+          0.4091,
+          0.5317
+        ]
+      },
+      "hit@10": {
+        "value": 0.5635,
+        "ci95": [
+          0.5,
+          0.6305
+        ]
+      },
+      "mrr@10": {
+        "value": 0.3383,
+        "ci95": [
+          0.29,
+          0.3938
+        ]
+      },
+      "recall@50": {
+        "value": 0.7802,
+        "ci95": [
+          0.7109,
+          0.8555
+        ]
+      },
+      "latency_ms": {
+        "mean": 0.908,
+        "p50": 0.875,
+        "p95": 1.149,
+        "p99": 1.605
+      }
+    },
+    "rerank": {
+      "hit@1": {
+        "value": 0.3282,
+        "ci95": [
+          0.2657,
+          0.3971
+        ]
+      },
+      "hit@5": {
+        "value": 0.5697,
+        "ci95": [
+          0.4972,
+          0.6493
+        ]
+      },
+      "hit@10": {
+        "value": 0.661,
+        "ci95": [
+          0.5867,
+          0.7343
+        ]
+      },
+      "mrr@10": {
+        "value": 0.4345,
+        "ci95": [
+          0.3701,
+          0.5046
+        ]
+      },
+      "recall@50": {
+        "value": 0.7802,
+        "ci95": [
+          0.7109,
+          0.8555
+        ]
+      },
+      "latency_ms": {
+        "mean": 1.47,
+        "p50": 1.427,
+        "p95": 1.724,
+        "p99": 2.11
+      }
+    }
+  },
+  "paired": {
+    "hybrid_minus_bm25": {
+      "diff": -0.0637,
+      "ci95": [
+        -0.098,
+        -0.0278
+      ],
+      "significant": true
+    },
+    "hybrid_minus_dense": {
+      "diff": 0.0922,
+      "ci95": [
+        0.0668,
+        0.1204
+      ],
+      "significant": true
+    },
+    "rerank_minus_hybrid": {
+      "diff": 0.0962,
+      "ci95": [
+        0.0613,
+        0.1308
+      ],
+      "significant": true
+    }
+  },
+  "difficulty": {
+    "query_shares_a_word_with_name": {
+      "n": 499,
+      "bm25": {
+        "mrr@10": 0.4668,
+        "hit@10": 0.7255
+      },
+      "dense": {
+        "mrr@10": 0.2855,
+        "hit@10": 0.511
+      },
+      "hybrid": {
+        "mrr@10": 0.3882,
+        "hit@10": 0.6353
+      },
+      "rerank": {
+        "mrr@10": 0.5067,
+        "hit@10": 0.7575
+      }
+    },
+    "no_shared_word_with_name": {
+      "n": 147,
+      "bm25": {
+        "mrr@10": 0.1822,
+        "hit@10": 0.3673
+      },
+      "dense": {
+        "mrr@10": 0.1124,
+        "hit@10": 0.2653
+      },
+      "hybrid": {
+        "mrr@10": 0.1691,
+        "hit@10": 0.3197
+      },
+      "rerank": {
+        "mrr@10": 0.1896,
+        "hit@10": 0.3333
+      }
+    }
+  },
+  "chunking": {
+    "ast": {
+      "bm25": {
+        "hit@1": {
+          "value": 0.2941,
+          "ci95": [
+            0.2356,
+            0.3581
+          ]
+        },
+        "hit@5": {
+          "value": 0.5449,
+          "ci95": [
+            0.4722,
+            0.6124
+          ]
+        },
+        "hit@10": {
+          "value": 0.644,
+          "ci95": [
+            0.5734,
+            0.7119
+          ]
+        },
+        "mrr@10": {
+          "value": 0.4021,
+          "ci95": [
+            0.3416,
+            0.4681
+          ]
+        },
+        "recall@50": {
+          "value": 0.7926,
+          "ci95": [
+            0.7294,
+            0.8538
+          ]
+        },
+        "latency_ms": {
+          "mean": 0.302,
+          "p50": 0.271,
+          "p95": 0.405,
+          "p99": 0.527
+        }
+      },
+      "hybrid": {
+        "hit@1": {
+          "value": 0.2461,
+          "ci95": [
+            0.2006,
+            0.3004
+          ]
+        },
+        "hit@5": {
+          "value": 0.469,
+          "ci95": [
+            0.4091,
+            0.5317
+          ]
+        },
+        "hit@10": {
+          "value": 0.5635,
+          "ci95": [
+            0.5,
+            0.6305
+          ]
+        },
+        "mrr@10": {
+          "value": 0.3383,
+          "ci95": [
+            0.29,
+            0.3938
+          ]
+        },
+        "recall@50": {
+          "value": 0.7802,
+          "ci95": [
+            0.7109,
+            0.8555
+          ]
+        },
+        "latency_ms": {
+          "mean": 0.908,
+          "p50": 0.875,
+          "p95": 1.149,
+          "p99": 1.605
+        }
+      }
+    },
+    "windows": {
+      "bm25": {
+        "hit@1": {
+          "value": 0.2399,
+          "ci95": [
+            0.1937,
+            0.2921
+          ]
+        },
+        "hit@5": {
+          "value": 0.4969,
+          "ci95": [
+            0.4408,
+            0.5647
+          ]
+        },
+        "hit@10": {
+          "value": 0.5898,
+          "ci95": [
+            0.5235,
+            0.6633
+          ]
+        },
+        "mrr@10": {
+          "value": 0.3443,
+          "ci95": [
+            0.2959,
+            0.4027
+          ]
+        },
+        "recall@50": {
+          "value": 0.7972,
+          "ci95": [
+            0.7431,
+            0.8623
+          ]
+        },
+        "latency_ms": {
+          "mean": 0.202,
+          "p50": 0.181,
+          "p95": 0.318,
+          "p99": 0.567
+        }
+      },
+      "hybrid": {
+        "hit@1": {
+          "value": 0.2276,
+          "ci95": [
+            0.1876,
+            0.2811
+          ]
+        },
+        "hit@5": {
+          "value": 0.4721,
+          "ci95": [
+            0.4156,
+            0.5512
+          ]
+        },
+        "hit@10": {
+          "value": 0.5991,
+          "ci95": [
+            0.5242,
+            0.6881
+          ]
+        },
+        "mrr@10": {
+          "value": 0.3308,
+          "ci95": [
+            0.2845,
+            0.3904
+          ]
+        },
+        "recall@50": {
+          "value": 0.8096,
+          "ci95": [
+            0.7453,
+            0.8803
+          ]
+        },
+        "latency_ms": {
+          "mean": 0.622,
+          "p50": 0.604,
+          "p95": 0.756,
+          "p99": 0.898
+        }
+      }
+    },
+    "n_chunks": {
+      "ast": 10135,
+      "windows": 4770
+    }
+  },
+  "reranker": {
+    "train": {
+      "queries_used": 1228,
+      "queries_total": 1500,
+      "rows": 61400,
+      "positives": 1228
+    },
+    "weights": {
+      "is_class": -1.465,
+      "is_function": 0.921,
+      "is_method": 0.9,
+      "bm25_rel": 0.708,
+      "rrf_rel": 0.458,
+      "bm25_rank_recip": 0.312,
+      "term_coverage": -0.3,
+      "name_overlap": 0.245,
+      "sig_overlap": 0.236,
+      "dense": -0.209,
+      "dense_rank_recip": 0.149,
+      "dense_rel": 0.128,
+      "idf_coverage": 0.066,
+      "path_overlap": 0.033,
+      "log_len": -0.024
+    }
+  },
+  "examples": [
+    {
+      "query": "Close the connection to the email server.",
+      "target": "django/core/mail/backends/smtp.py:101-118 EmailBackend.close",
+      "rank": 1,
+      "top3": [
+        "django/core/mail/backends/smtp.py:101-118 EmailBackend.close",
+        "django/core/servers/basehttp.py:105-107 ThreadedWSGIServer._close_connections",
+        "django/core/servers/basehttp.py:109-111 ThreadedWSGIServer.close_request"
+      ]
+    },
+    {
+      "query": "Return the extent (an Envelope) of this layer.",
+      "target": "django/contrib/gis/gdal/layer.py:98-103 Layer.extent",
+      "rank": 1,
+      "top3": [
+        "django/contrib/gis/gdal/layer.py:98-103 Layer.extent",
+        "django/contrib/gis/gdal/geometries.py:273-276 OGRGeometry.extent",
+        "django/contrib/gis/geos/geometry.py:649-664 GEOSGeometryBase.extent"
+      ]
+    },
+    {
+      "query": "Return the name of the linear units.",
+      "target": "django/contrib/gis/gdal/srs.py:213-217 SpatialReference.linear_name",
+      "rank": 2,
+      "top3": [
+        "django/contrib/gis/gdal/srs.py:219-223 SpatialReference.linear_units",
+        "django/contrib/gis/gdal/srs.py:213-217 SpatialReference.linear_name",
+        "django/contrib/gis/db/backends/base/models.py:83-86 SpatialRefSysMixin.linear_units"
+      ]
+    },
+    {
+      "query": "Log out the user if they are logged in. Then redirect to the login page.",
+      "target": "django/contrib/auth/views.py:172-177 logout_then_login",
+      "rank": 11,
+      "top3": [
+        "django/contrib/auth/views.py:91-96 LoginView.get_default_redirect_url",
+        "django/contrib/auth/decorators.py:71-85 login_required",
+        "django/contrib/flatpages/views.py:48-70 render_flatpage"
+      ]
+    }
+  ],
+  "seconds": 13.8
+}

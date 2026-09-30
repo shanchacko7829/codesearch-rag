@@ -1,0 +1,570 @@
+{
+  "repo": "flask",
+  "subdir": "src/flask",
+  "commit": "22d924701a6ae2e4cd01e9a15bbaf3946094af65",
+  "seed": 42,
+  "corpus": {
+    "files": 24,
+    "chunks": 415,
+    "terms": 1636,
+    "chunks_by_kind": {
+      "module": 30,
+      "function": 69,
+      "class": 46,
+      "method": 270
+    },
+    "index_build_s": {
+      "tokenize": 0.04,
+      "bm25": 0.0,
+      "dense": 0.09
+    }
+  },
+  "benchmark": {
+    "eligible_queries": 189,
+    "train_queries": 126,
+    "test_queries": 63,
+    "test_files": 5,
+    "share_with_name_overlap": 0.921
+  },
+  "modes": {
+    "bm25": {
+      "hit@1": {
+        "value": 0.4127,
+        "ci95": [
+          0.2586,
+          0.5789
+        ]
+      },
+      "hit@5": {
+        "value": 0.6984,
+        "ci95": [
+          0.5122,
+          0.8095
+        ]
+      },
+      "hit@10": {
+        "value": 0.746,
+        "ci95": [
+          0.6471,
+          0.8095
+        ]
+      },
+      "mrr@10": {
+        "value": 0.5287,
+        "ci95": [
+          0.3602,
+          0.6643
+        ]
+      },
+      "recall@50": {
+        "value": 0.9365,
+        "ci95": [
+          0.9024,
+          1.0
+        ]
+      },
+      "latency_ms": {
+        "mean": 0.237,
+        "p50": 0.23,
+        "p95": 0.305,
+        "p99": 0.349
+      }
+    },
+    "dense": {
+      "hit@1": {
+        "value": 0.3333,
+        "ci95": [
+          0.3056,
+          0.3485
+        ]
+      },
+      "hit@5": {
+        "value": 0.7302,
+        "ci95": [
+          0.619,
+          0.8049
+        ]
+      },
+      "hit@10": {
+        "value": 0.8571,
+        "ci95": [
+          0.7688,
+          0.8961
+        ]
+      },
+      "mrr@10": {
+        "value": 0.5162,
+        "ci95": [
+          0.4569,
+          0.5503
+        ]
+      },
+      "recall@50": {
+        "value": 0.9524,
+        "ci95": [
+          0.9365,
+          1.0
+        ]
+      },
+      "latency_ms": {
+        "mean": 0.424,
+        "p50": 0.367,
+        "p95": 0.799,
+        "p99": 1.196
+      }
+    },
+    "hybrid": {
+      "hit@1": {
+        "value": 0.4127,
+        "ci95": [
+          0.2586,
+          0.5789
+        ]
+      },
+      "hit@5": {
+        "value": 0.6984,
+        "ci95": [
+          0.551,
+          0.8049
+        ]
+      },
+      "hit@10": {
+        "value": 0.7937,
+        "ci95": [
+          0.7037,
+          0.8359
+        ]
+      },
+      "mrr@10": {
+        "value": 0.5457,
+        "ci95": [
+          0.4019,
+          0.6657
+        ]
+      },
+      "recall@50": {
+        "value": 0.9365,
+        "ci95": [
+          0.9024,
+          1.0
+        ]
+      },
+      "latency_ms": {
+        "mean": 0.333,
+        "p50": 0.306,
+        "p95": 0.522,
+        "p99": 0.569
+      }
+    },
+    "rerank": {
+      "hit@1": {
+        "value": 0.4444,
+        "ci95": [
+          0.3462,
+          0.5
+        ]
+      },
+      "hit@5": {
+        "value": 0.7778,
+        "ci95": [
+          0.7288,
+          0.8423
+        ]
+      },
+      "hit@10": {
+        "value": 0.9048,
+        "ci95": [
+          0.8941,
+          0.9474
+        ]
+      },
+      "mrr@10": {
+        "value": 0.5891,
+        "ci95": [
+          0.513,
+          0.6292
+        ]
+      },
+      "recall@50": {
+        "value": 0.9365,
+        "ci95": [
+          0.9024,
+          1.0
+        ]
+      },
+      "latency_ms": {
+        "mean": 1.104,
+        "p50": 1.145,
+        "p95": 1.432,
+        "p99": 2.504
+      }
+    },
+    "rerank_transfer": {
+      "hit@1": {
+        "value": 0.4603,
+        "ci95": [
+          0.3061,
+          0.5943
+        ]
+      },
+      "hit@5": {
+        "value": 0.7302,
+        "ci95": [
+          0.6098,
+          0.82
+        ]
+      },
+      "hit@10": {
+        "value": 0.8254,
+        "ci95": [
+          0.8072,
+          0.8949
+        ]
+      },
+      "mrr@10": {
+        "value": 0.5753,
+        "ci95": [
+          0.4371,
+          0.6909
+        ]
+      },
+      "recall@50": {
+        "value": 0.9365,
+        "ci95": [
+          0.9024,
+          1.0
+        ]
+      },
+      "latency_ms": {
+        "mean": 1.164,
+        "p50": 1.236,
+        "p95": 1.355,
+        "p99": 1.429
+      }
+    }
+  },
+  "paired": {
+    "hybrid_minus_bm25": {
+      "diff": 0.017,
+      "ci95": [
+        0.0014,
+        0.0411
+      ],
+      "significant": true
+    },
+    "hybrid_minus_dense": {
+      "diff": 0.0295,
+      "ci95": [
+        -0.0703,
+        0.1241
+      ],
+      "significant": false
+    },
+    "rerank_minus_hybrid": {
+      "diff": 0.0434,
+      "ci95": [
+        -0.0401,
+        0.1287
+      ],
+      "significant": false
+    },
+    "rerank_transfer_minus_hybrid": {
+      "diff": 0.0297,
+      "ci95": [
+        0.0216,
+        0.0394
+      ],
+      "significant": true
+    }
+  },
+  "difficulty": {
+    "query_shares_a_word_with_name": {
+      "n": 58,
+      "bm25": {
+        "mrr@10": 0.5671,
+        "hit@10": 0.7759
+      },
+      "dense": {
+        "mrr@10": 0.5535,
+        "hit@10": 0.8966
+      },
+      "hybrid": {
+        "mrr@10": 0.5855,
+        "hit@10": 0.8276
+      },
+      "rerank": {
+        "mrr@10": 0.6295,
+        "hit@10": 0.931
+      }
+    },
+    "no_shared_word_with_name": {
+      "n": 5,
+      "bm25": {
+        "mrr@10": 0.0833,
+        "hit@10": 0.4
+      },
+      "dense": {
+        "mrr@10": 0.0833,
+        "hit@10": 0.4
+      },
+      "hybrid": {
+        "mrr@10": 0.0833,
+        "hit@10": 0.4
+      },
+      "rerank": {
+        "mrr@10": 0.12,
+        "hit@10": 0.6
+      }
+    }
+  },
+  "chunking": {
+    "ast": {
+      "bm25": {
+        "hit@1": {
+          "value": 0.4127,
+          "ci95": [
+            0.2586,
+            0.5789
+          ]
+        },
+        "hit@5": {
+          "value": 0.6984,
+          "ci95": [
+            0.5122,
+            0.8095
+          ]
+        },
+        "hit@10": {
+          "value": 0.746,
+          "ci95": [
+            0.6471,
+            0.8095
+          ]
+        },
+        "mrr@10": {
+          "value": 0.5287,
+          "ci95": [
+            0.3602,
+            0.6643
+          ]
+        },
+        "recall@50": {
+          "value": 0.9365,
+          "ci95": [
+            0.9024,
+            1.0
+          ]
+        },
+        "latency_ms": {
+          "mean": 0.237,
+          "p50": 0.23,
+          "p95": 0.305,
+          "p99": 0.349
+        }
+      },
+      "hybrid": {
+        "hit@1": {
+          "value": 0.4127,
+          "ci95": [
+            0.2586,
+            0.5789
+          ]
+        },
+        "hit@5": {
+          "value": 0.6984,
+          "ci95": [
+            0.551,
+            0.8049
+          ]
+        },
+        "hit@10": {
+          "value": 0.7937,
+          "ci95": [
+            0.7037,
+            0.8359
+          ]
+        },
+        "mrr@10": {
+          "value": 0.5457,
+          "ci95": [
+            0.4019,
+            0.6657
+          ]
+        },
+        "recall@50": {
+          "value": 0.9365,
+          "ci95": [
+            0.9024,
+            1.0
+          ]
+        },
+        "latency_ms": {
+          "mean": 0.333,
+          "p50": 0.306,
+          "p95": 0.522,
+          "p99": 0.569
+        }
+      }
+    },
+    "windows": {
+      "bm25": {
+        "hit@1": {
+          "value": 0.3016,
+          "ci95": [
+            0.2245,
+            0.3805
+          ]
+        },
+        "hit@5": {
+          "value": 0.6032,
+          "ci95": [
+            0.449,
+            0.7164
+          ]
+        },
+        "hit@10": {
+          "value": 0.6984,
+          "ci95": [
+            0.561,
+            0.7971
+          ]
+        },
+        "mrr@10": {
+          "value": 0.4359,
+          "ci95": [
+            0.2973,
+            0.5482
+          ]
+        },
+        "recall@50": {
+          "value": 0.9048,
+          "ci95": [
+            0.8941,
+            0.9474
+          ]
+        },
+        "latency_ms": {
+          "mean": 0.394,
+          "p50": 0.205,
+          "p95": 0.27,
+          "p99": 4.615
+        }
+      },
+      "hybrid": {
+        "hit@1": {
+          "value": 0.3333,
+          "ci95": [
+            0.2245,
+            0.4211
+          ]
+        },
+        "hit@5": {
+          "value": 0.6349,
+          "ci95": [
+            0.4634,
+            0.76
+          ]
+        },
+        "hit@10": {
+          "value": 0.7302,
+          "ci95": [
+            0.561,
+            0.8358
+          ]
+        },
+        "mrr@10": {
+          "value": 0.4555,
+          "ci95": [
+            0.3128,
+            0.5649
+          ]
+        },
+        "recall@50": {
+          "value": 0.9206,
+          "ci95": [
+            0.9036,
+            0.9615
+          ]
+        },
+        "latency_ms": {
+          "mean": 0.724,
+          "p50": 0.321,
+          "p95": 4.429,
+          "p99": 4.623
+        }
+      }
+    },
+    "n_chunks": {
+      "ast": 415,
+      "windows": 310
+    }
+  },
+  "reranker": {
+    "train": {
+      "queries_used": 122,
+      "queries_total": 126,
+      "rows": 6100,
+      "positives": 122
+    },
+    "weights": {
+      "dense_rel": 1.073,
+      "is_class": -0.902,
+      "is_method": 0.821,
+      "is_function": 0.732,
+      "term_coverage": 0.479,
+      "idf_coverage": -0.456,
+      "rrf_rel": 0.453,
+      "dense": 0.292,
+      "bm25_rel": -0.277,
+      "log_len": -0.273,
+      "bm25_rank_recip": 0.248,
+      "name_overlap": 0.23,
+      "path_overlap": -0.13,
+      "dense_rank_recip": 0.106,
+      "sig_overlap": -0.036
+    }
+  },
+  "examples": [
+    {
+      "query": "Find the root path of a package, or the path that contains a module. If it cannot be found, returns the current working directory.",
+      "target": "src/flask/helpers.py:577-631 get_root_path",
+      "rank": 1,
+      "top3": [
+        "src/flask/helpers.py:577-631 get_root_path",
+        "src/flask/sansio/scaffold.py:709-751 _find_package_path",
+        "src/flask/sansio/app.py:510-521 App.auto_find_instance_path"
+      ]
+    },
+    {
+      "query": "Runs the application on a local development server.",
+      "target": "src/flask/app.py:546-667 Flask.run",
+      "rank": 1,
+      "top3": [
+        "src/flask/app.py:546-667 Flask.run",
+        "src/flask/cli.py:890-1001 run_command",
+        "src/flask/cli.py:774-785 show_server_banner"
+      ]
+    },
+    {
+      "query": "Dispatches the request and on top of that performs request pre and postprocessing as well as HTTP exception catching and error handling.",
+      "target": "src/flask/app.py:904-920 Flask.full_dispatch_request",
+      "rank": 3,
+      "top3": [
+        "src/flask/app.py:779-809 Flask.handle_user_exception",
+        "src/flask/app.py:744-777 Flask.handle_http_exception",
+        "src/flask/app.py:904-920 Flask.full_dispatch_request"
+      ]
+    },
+    {
+      "query": "Raise an werkzeug.exceptions.HTTPException for the given status code.",
+      "target": "src/flask/helpers.py:273-293 abort",
+      "rank": 17,
+      "top3": [
+        "src/flask/app.py:744-777 Flask.handle_http_exception",
+        "src/flask/sansio/scaffold.py:656-698 Scaffold._get_exc_class_and_code",
+        "src/flask/app.py:779-809 Flask.handle_user_exception"
+      ]
+    }
+  ],
+  "seconds": 0.9
+}
